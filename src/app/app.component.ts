@@ -10,10 +10,15 @@ export class AppComponent implements OnInit {
   funds: any[] = []; 
   constructor(private fundsService: FundsService) {}
 
+  //interface för response?
   ngOnInit() {
-    this.fundsService.getFunds().subscribe((data: any) => {
-      console.log(data);
-      this.funds = data;
+    this.fundsService.getFunds().subscribe({
+      next: (response: any) => {
+        this.funds = response[0].data;
+      },
+      error: (error) => {
+        console.error('Error fetching funds:', error);
+      }
     });
   }
 }
