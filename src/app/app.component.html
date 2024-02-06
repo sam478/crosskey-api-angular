@@ -1,16 +1,22 @@
-<h1> FundChecker </h1>
-<div *ngFor="let fund of funds">
-  <h2>{{fund.fundName }}</h2>
-  <p>
-    <strong>1 Month:</strong>
-    {{fund.change1m !== null ? fund.change1m : 'Data not available' }}
-  </p>
-  <p>
-    <strong>3 Months:</strong>
-    {{fund.change3m !== null ? fund.change3m : 'Data not available' }}
-  </p>
-  <p>
-    <strong>3 Years:</strong>
-    {{fund.change3y !== null ? fund.change3y : 'Data not available' }}
-  </p>
-</div>
+<body>
+  <header>
+    <h1>FundChecker</h1>
+  </header>
+  <main>
+        <div *ngFor="let fund of funds" class="fund">
+        <h2>{{ fund.fundName }}</h2>
+        <p>
+          <strong>1 Month:</strong>
+          {{ fund.change1m !== null ? fund.change1m : 'Data not available' }}
+        </p>
+        <p>
+          <strong>3 Months:</strong>
+          {{ fund.change3m !== null ? fund.change3m : 'Data not available' }}
+        </p>
+        <p>
+          <strong>3 Years:</strong>
+          {{ fund.change3y !== null ? fund.change3y : 'Data not available' }}
+        </p>
+      </div>
+</main>
+</body>
